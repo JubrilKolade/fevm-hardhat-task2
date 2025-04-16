@@ -1,3 +1,160 @@
+
+
+# Ethereum To-Do List dApp
+
+This project is a simple **Ethereum-based To-Do List dApp** built using **React**, **RainbowKit**, **Wagmi**, **ethers.js**, and **Filecoin Calibration Network**. The app allows users to interact with a smart contract deployed on the Filecoin Calibration network to create and toggle tasks.
+
+## Features
+
+- **Connect Wallet**: Users can connect their wallet using RainbowKit.
+- **Create Task**: Users can add new tasks to the list.
+- **Toggle Task Completion**: Users can mark tasks as completed by clicking on them.
+- **Smart Contract Integration**: The app interacts with a Solidity smart contract that stores tasks on the blockchain.
+
+## Tech Stack
+
+- **React**: Frontend framework.
+- **RainbowKit**: For easy wallet integration and connecting to Web3.
+- **Wagmi**: A React library for interacting with Ethereum (Filecoin in this case) and smart contracts.
+- **ethers.js**: Library to interact with the Ethereum blockchain and smart contracts.
+- **Solidity**: Smart contract language.
+- **Filecoin Calibration Network**: Test network for Filecoin and Ethereum compatibility.
+
+## Requirements
+
+- **Node.js** (>=16.x)
+- **npm** or **yarn**
+- **A wallet like MetaMask** to interact with the dApp.
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/todo-list-dapp.git
+cd todo-list-dapp
+```
+
+### 2. Install dependencies
+
+Install the required dependencies for the project:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the root directory and add the contract address:
+
+```env
+VITE_CONTRACT_ADDRESS=0xYourContractAddressHere
+```
+
+### 4. Run the development server
+
+Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+This will start the app on `http://localhost:3000`.
+
+### 5. Deploy Smart Contract (if not deployed)
+
+1. **Deploy the smart contract** to the **Filecoin Calibration network** using tools like **Hardhat** or **Truffle**.
+2. After deployment, update the contract address in the `.env` file.
+
+### 6. Interacting with the app
+
+- **Connect your wallet** using the RainbowKit "Connect Button".
+- **Create tasks** by typing in the input box and clicking the "Add Task" button.
+- **Mark tasks as completed** by clicking on the task name. The task will be marked with a strikethrough.
+
+## File Structure
+
+```
+/src
+  App.jsx                # Main React component
+  main.jsx               # ReactDOM entry point
+  wagmi.js               # Wagmi config for RainbowKit
+  /contracts/utils/abi.json # ABI of the deployed TodoList contract
+.env                     # Environment variables (contract address)
+index.css                # Global styles
+```
+
+## Smart Contract
+
+The smart contract deployed on the Filecoin Calibration Network is written in Solidity. It allows users to create and toggle tasks. The contract has the following methods:
+
+- `createTask(string memory _content)`: Creates a new task with the provided content.
+- `toggleCompleted(uint _id)`: Toggles the completion state of the task with the given ID.
+- `getTask(uint _id)`: Retrieves the task's ID, content, and completion status.
+
+### Example Smart Contract ABI
+
+```json
+[
+  {
+    "name": "TaskCreated",
+    "type": "event",
+    "inputs": [
+      { "name": "id", "type": "uint256", "indexed": false },
+      { "name": "content", "type": "string", "indexed": false },
+      { "name": "completed", "type": "bool", "indexed": false }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "createTask",
+    "type": "function",
+    "inputs": [{ "name": "_content", "type": "string" }],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "taskCount",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "tasks",
+    "type": "function",
+    "inputs": [{ "name": "", "type": "uint256" }],
+    "outputs": [
+      { "name": "id", "type": "uint256" },
+      { "name": "content", "type": "string" },
+      { "name": "completed", "type": "bool" }
+    ],
+    "stateMutability": "view"
+  }
+]
+```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature-name`).
+6. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Feel free to adjust the sections based on any additional features or modifications you have in your project.
+
 # FEVM Hardhat Kit
 
 ## Cloning the Repo
