@@ -8,7 +8,7 @@ import { WagmiConfig } from 'wagmi';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { filecoinCalibration } from 'wagmi/chains';
 
-import config from './wagmi.js'; // or './wagmi.ts'
+import config from './utils/wagmi.js'; // or './wagmi.ts'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
