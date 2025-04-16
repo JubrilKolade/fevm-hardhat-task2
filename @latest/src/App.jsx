@@ -3,8 +3,9 @@ import { useAccount, useWalletClient } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import TodoListABI from "../contracts/utils/abi.json";
+import React from "react";
 
-const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS; // or process.env if CRA
+// const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS; // or process.env if CRA
 
 function App() {
   const { address, isConnected } = useAccount();

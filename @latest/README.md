@@ -1,11 +1,23 @@
-# React + Vite
+# TodoList Dapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![TodoList Screenshot](src/assets/todolist.png)
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a decentralized TodoList application built with React, Vite, and Filecoin Virtual Machine (FVM).
+
+## Features
+- Add tasks
+- Mark tasks as complete
+- Decentralized task management
+
+## Technologies
+- React
+- Vite
+- Filecoin Virtual Machine (FVM)
+- Hardhat
+- RainbowKit
+- Wagmi
 
 ## Expanding the ESLint configuration
 
