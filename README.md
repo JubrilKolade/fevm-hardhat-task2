@@ -4,6 +4,8 @@
 
 This project is a simple **Ethereum-based To-Do List dApp** built using **React**, **RainbowKit**, **Wagmi**, **ethers.js**, and **Filecoin Calibration Network**. The app allows users to interact with a smart contract deployed on the Filecoin Calibration network to create and toggle tasks.
 
+# contract-address  - 0x77910175BB4bADDA86d7bc1254B9c0B4F30972d4
+
 ## Features
 
 - **Connect Wallet**: Users can connect their wallet using RainbowKit.
